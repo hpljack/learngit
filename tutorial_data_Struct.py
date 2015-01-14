@@ -94,17 +94,85 @@ if __name__ =="__main__":
     del a
     # print(a) # exception a has been deleted
 
-    #元组  序列
-    t = 12345,54321,'hello'
+    #元组  序列 tuple
+    t = 12345,54321,'hello' #元组打包
     print(t)
     print(t[0])
-    u = t
+    u = t,(1,2,3,4)
     print(u)
-    del t[0]
-    print(t)
+    u += (6,7,8,9)
     print(u)
+    x,y,z = t #序列解包
+    print(z,y,x,sep='|')
 
-    
+    #集合 Set 集合是种无序不重复的元素集
+    # 集合对象也支持合 (union),交 (intersection), 差 (difference), 和对称差 (sysmmetric difference) 等数学操作.
+    basket = {'apple','orange','apple','apple','pear'}
+    print(basket) #重复的被移除
+    #集合操作
+    a = set('badadebdeade')
+    b = set('edefohde')
+    print(a)
+    print(b)
+    print(a-b) #交集
+    print(a|b) #并集
+    print(a&b) #同或
+    print(a^b) #异或
+    a ={x for x in 'abracadabra' if x not in 'abc'}
+    print(a)
+
+    #字典 Mapping types - dict key-value
+    tel = {'jack':4098,'sape':9832}
+    tel['guilo'] = 4271
+    print(tel)
+    del tel['sape']
+    print(tel)
+    tel['Iris'] = 8451
+    print(tel)
+    lst = list(tel.keys())
+    print(lst)
+    sorted(tel.keys())
+    print(tel)
+    print('jack' in tel)
+
+    tel2 = dict(jack=1024,sape=2048,Iris=8983,guilo=4343)
+    print(tel2)
+
+    #遍历技巧
+    knights = {'gallahad':'the pure','robin':'the brave'}
+    for k,v in knights.items():
+        print(k,v,sep=':')
+
+    for i, v in enumerate(['tic','tac','toel']):
+	    print(i,v)
+    print()
+
+    row = ['jack','broc','sepx']
+    for i,v in enumerate(row):
+        print(i,v)
+    print()
+
+
+    question = ['name','quest','favorite color']
+    answer = ['lancelot','the holy grail','blue']
+    for q,a in zip(question,answer):
+        print('what is your {0} ? It is {1}'.format(q,a))
+    print()
+
+    for i in reversed(range(1,20,2)):
+        print(i,end=',')
+    print()
+
+    for f in sorted(set(basket)):
+        print(f)
+    print()
+
+
+
+
+
+
+
 
 
 
