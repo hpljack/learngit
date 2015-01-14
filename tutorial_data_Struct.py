@@ -166,15 +166,3 @@ if __name__ =="__main__":
     for f in sorted(set(basket)):
         print(f)
     print()
-
-
-
-
-
-
-
-
-
-
-
-
